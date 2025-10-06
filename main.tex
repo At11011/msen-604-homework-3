@@ -1,0 +1,270 @@
+\input{./src/main.sty}
+% Additional SI unit for Fahrenheit
+\DeclareSIUnit\fahrenheit{\degree F}
+
+\begin{document}
+
+% Include title page
+\input{./src/titlepage.tex}
+
+\pagebreak
+
+\section*{4.1.2}
+
+Suppose that there are two quantum-mechanically measurable
+quantities, $c$ with associated operator
+$\hat C$ , and $d$ with associated operator $\hat D$ . In particular,
+operator $\hat C$ has two eigenvectors $|\phi_1\rangle$ and $|\phi_2\rangle$,
+and similarly operator $\hat D$ has two eigenvectors $|\psi_1\rangle$
+and $|\psi_2\rangle$. The relation between the
+eigenvectors is
+
+\begin{align*}
+  |\phi_1\rangle &= \frac{1}{5}(3|\psi_1\rangle + 4|\psi_2\rangle) \\
+  |\phi_2\rangle &= \frac{1}{5}(4|\psi_1\rangle - 3|\psi_2\rangle)
+\end{align*}
+
+Suppose a measurement is made of the quantity $c$, and the system is
+measured to be in state $|\phi_1\rangle$.
+Then a measurement is made of quantity $d$, and following that the
+quantity $c$ is again measured. What
+is the probability (expressed as a fraction) that the system will be
+found in state $|\psi_1\rangle$ on this second
+measurement of $c$?
+
+[Note: this is really a problem in quantum
+  mechanical measurement discussed in
+the previous Chapter, but is a good exercise in the use of the Dirac notation.]
+
+\boxedanswer{
+
+  \begin{align*}
+    \hat C |\phi_1\rangle &= c|\phi_1\rangle \\
+    \hat C |\phi_2\rangle &= c|\phi_2\rangle \\
+    \hat D |\psi_1\rangle &= d|\phi_1\rangle \\
+    \hat D |\psi_2\rangle &= d|\phi_2\rangle \\
+    | \phi_1 \rangle &= \frac{1}{5}(3|\psi_1\rangle + 4 | \psi_2 \rangle) \\
+    |\psi_1\rangle &= \frac{5}{3}| \phi_1 \rangle - \frac{4}{3}|
+    \psi_2 \rangle \\
+    |\phi_2\rangle &= \frac{1}{5}(4|\psi_1\rangle - 3|\psi_2\rangle) \\
+    |\psi_2\rangle &= \frac{4}{3}|\psi_1\rangle - \frac{5}{3}|\phi_2\rangle \\
+    |\psi_1\rangle &= \frac{5}{3}| \phi_1 \rangle - \frac{4}{3}
+    \left(\frac{4}{3}|\psi_1\rangle -
+    \frac{5}{3}|\phi_2\rangle\right) \\
+    |\psi_1\rangle &= \frac{5}{3}| \phi_1 \rangle
+    - \frac{16}{9}|\psi_1\rangle
+    + \frac{20}{9}|\phi_2\rangle \\
+    \frac{25}{9}|\psi_1\rangle
+    &= \frac{5}{3}| \phi_1 \rangle
+    + \frac{20}{9}|\phi_2\rangle \\
+    |\psi_1\rangle
+    &= \frac{3}{5}| \phi_1 \rangle
+    + \frac{4}{5}|\phi_2\rangle \\
+    |\psi_2\rangle &= \frac{4}{3}\left( \frac{3}{5}| \phi_1 \rangle
+    + \frac{4}{5}|\phi_2\rangle\right) - \frac{5}{3}|\phi_2\rangle \\
+    |\psi_2\rangle &= \frac{4}{5}| \phi_1 \rangle
+    - \frac{3}{5}|\phi_2\rangle \\
+  \end{align*}
+
+  The probability of getting state $\psi_1$ after measuring $d$,
+  given that the system is in state $\phi_1$.:
+
+  \begin{align*}
+    P(\psi_1) &= |\langle\psi_1|\phi_1\rangle|^2 =
+    \left(\frac{3}{5}\overbrace{\langle\psi_1|\psi_1\rangle}^1 + \frac{4}{5}
+    \cancel{\langle\psi_1| \psi_2 \rangle}\right)^2 \\
+    P(\psi_1) &= \frac{9}{25}
+  \end{align*}
+
+}
+
+\boxedanswer{
+  The probability of getting state $\psi_2$ after measuring $d$,
+  given that the system is in state $\phi_1$.:
+
+  \begin{align*}
+    P(\psi_2) &= |\langle\psi_2|\phi_1\rangle|^2 =
+    \left(\frac{3}{5}\cancel{\langle\psi_2|\psi_1\rangle} + \frac{4}{5}
+    \overbrace{\langle\psi_2| \psi_2 \rangle}^1\right)^2 \\
+    P(\psi_2) &= \frac{16}{25}
+  \end{align*}
+
+  The probability of getting state $\phi_1$ given state $\psi_1$:
+
+  \begin{align*}
+    P(\phi_1|\psi_1) &= |\langle \phi_1|\psi_1 \rangle|^2 =
+    \left(\frac{3}{5}\langle \phi_1| \phi_1 \rangle
+    + \frac{4}{5}\langle \phi_1|\phi_2\rangle\right)^2 \\
+    P(\phi_1|\psi_1) &= \left(\frac{3}{5}\overbrace{\langle \phi_1|
+      \phi_1 \rangle}^1
+    + \frac{4}{5}\cancel{\langle \phi_1|\phi_2\rangle}\right)^2 \\
+    P(\phi_1|\psi_1) &= \frac{9}{25} \\
+  \end{align*}
+
+  The probability of getting state $\phi_1$ given state $\psi_2$:
+
+  \begin{align*}
+    P(\phi_1|\psi_2) &= |\langle \phi_1|\psi_2 \rangle|^2 =
+    \left(\frac{4}{5}\overbrace{|\langle \phi_1| \phi_1 \rangle}^1
+    - \frac{3}{5}\cancel{|\langle \phi_1|\phi_2\rangle}\right)^2 \\
+    P(\phi_1|\psi_2) &= \frac{16}{25}
+  \end{align*}
+
+  Total probability:
+
+  \begin{align*}
+    P(\phi_2) &= P(\phi_1|\psi_1)P(\psi_1) + P(\phi_1|\psi_2)P(\psi_2) \\
+    P(\phi_2) &= \left(\frac{9}{25}\right)^2 + \left(\frac{16}{25}\right)^2 \\
+    \Aboxed{P(\phi_2) &= \frac{337}{625}}
+  \end{align*}
+}
+
+\pagebreak
+
+\section*{4.10.3}
+
+Consider the orthonormal basis functions $\psi_1(x) = 1/\sqrt2$ and
+$\psi_2(x) = \sqrt{\frac{3}{2}}x$
+that are capable of representing any function of the form $f(x) = ax
++ b$ defined over the range $-1 < x < 1$.
+
+\begin{enumerate}[(i)]
+  \item Consider now the new basis functions $\phi_1(x) =
+    \frac{\sqrt{3}x}{2} + \frac{1}{2}$ and
+    $\phi_2(x) = \frac{\sqrt{3}x}{2} - \frac{1}{2}$.
+    Represent the functions $\phi_1(x)$ and $\phi_2(x)$ in a
+    two-dimensional diagram with orthogonal axes
+    corresponding to the functions $\psi_1(x)$ and $\psi_2(x)$
+    respectively. \label{first}
+
+    \boxedanswer{
+
+      Express $f(x)$ in terms of $\psi_1$ and $\psi_2$:
+
+      \begin{align*}
+        1 &= \overbrace{\sqrt2}^b\psi_1(x) \\
+        x &= \overbrace{\sqrt\frac{2}{3}}^a\psi_2(x)
+      \end{align*}
+
+      In the $[\psi_1, \psi_2]$ space, $f(x) = b\cdot 1 + a\cdot x$
+      can be represented as $\left[b\sqrt{2}, a\sqrt{\frac{2}{3}}\right]$.
+
+      For $\phi_1$ and $\phi_2$:
+
+      \begin{align*}
+        \phi_1(x) &= \overbrace{\frac{\sqrt{3}}{2}}^{a}x +
+        \overbrace{\frac{1}{2}}^{b} \\
+        \phi_2(x) &=
+        \overbrace{\frac{\sqrt{3}}{2}}^{a}x
+        \overbrace{-\frac{1}{2}}^{b}
+      \end{align*}
+
+      $\phi_1:$ $\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right]$
+
+      $\phi_2:$ $\left[-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right]$
+
+      \centering
+
+      \input{src/fig_4_10_3.tex}
+
+    }
+
+    \pagebreak
+
+  \item Construct the matrix that will transform a function in the
+    “old” representation as a vector $
+    \begin{bmatrix} c_1 \\ c_2
+    \end{bmatrix}$
+    into a new representation in terms of these new basis functions
+    as a vector $
+    \begin{bmatrix}d_1 \\ d_2
+    \end{bmatrix}$, where an arbitrary function
+    $f(x) = ax + b$
+    is represented as the linear combination
+    $f(x) = d_1 \phi_1(x) + d_2\phi_2(x)$. \label{second}
+  \item Show that the matrix from part \ref{second} is unitary.
+  \item Use the matrix of part \ref{second} to calculate the vector
+    $
+    \begin{bmatrix}d_1 \\ d_2
+    \end{bmatrix}$
+    for the specific example function $2x + 3$.
+  \item Indicate the resulting vector on the same diagram as used for
+    parts \ref{first}.
+\end{enumerate}
+
+\pagebreak
+
+\section*{4.11.1}
+
+For each of the following matrices, say whether or not it is unitary
+and whether or not it is Hermitian.
+
+\begin{enumerate}[(i)]
+  \item $
+    \begin{bmatrix} 1 & 0 \\ 0 & 1
+    \end{bmatrix}$
+  \item $
+    \begin{bmatrix} 1 & i \\ -i & 1
+    \end{bmatrix}$
+  \item $
+    \begin{bmatrix} i & 0 \\ 0 & i
+    \end{bmatrix}$
+  \item $
+    \begin{bmatrix} 0 & 1 \\ i & 0
+    \end{bmatrix}$
+\end{enumerate}
+
+\pagebreak
+
+\section*{4.11.3 (i)}
+
+Consider the Hermiticity of the following operators.
+
+\begin{enumerate}[(i)]
+  \item Prove that the momentum operator is Hermitian. For simplicity
+    you may perform this proof
+    for a one-dimensional system (i.e., only consider functions of
+    $x$, and consider only the $\hat p_x$ operator).
+
+    [Hints: Consider $\int_{-\infty}^\infty \psi_i^*(x)p_x\psi_j(x)dx$
+      where the $\psi_n(x)$ are a complete orthonormal set.
+      You may want to consider an integration by parts. Note that the
+      $\psi_n(x)$ must vanish at $\pm \infty$,
+    since otherwise they could not be normalized.]
+\end{enumerate}
+
+\pagebreak
+
+\section*{5.1.1}
+
+The Pauli spin matrices are quantum mechanical operators that operate
+in a two-dimensional
+Hilbert space, and can be written as
+
+\begin{equation*}
+  \hat\sigma_x =
+  \begin{bmatrix} 0 & 1 \\ 1 & 0
+  \end{bmatrix}, \hat\sigma_y =
+  \begin{bmatrix} 0 & -i \\ i & 0
+  \end{bmatrix}, \hat\sigma_z =
+  \begin{bmatrix}
+    1 & 0 \\ 0 & -1
+  \end{bmatrix}
+\end{equation*}
+
+Find the commutation relations between each pair of these operators,
+proving your answer by explicit
+matrix multiplication, and simplifying the answers as much as possible.
+
+\pagebreak
+
+\section*{5.4.3}
+
+Formally transform the momentum operator $\hat p_z$ into the momentum
+basis using algebra similar to
+that above for the transformation of the position operator into the
+momentum basis.
+
+\pagebreak
+
+\end{document}
