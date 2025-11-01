@@ -9,599 +9,79 @@
 
 \pagebreak
 
-\section*{4.1.2}
+\section*{Problem 6.2.1}
 
-Suppose that there are two quantum-mechanically measurable
-quantities, $c$ with associated operator
-$\hat C$ , and $d$ with associated operator $\hat D$ . In particular,
-operator $\hat C$ has two eigenvectors $|\phi_1\rangle$ and $|\phi_2\rangle$,
-and similarly operator $\hat D$ has two eigenvectors $|\psi_1\rangle$
-and $|\psi_2\rangle$. The relation between the
-eigenvectors is
+Solve the problem above of an electron in a potential well with 3
+units of field using the first two energy eigenfunctions of the well
+without field as the finite basis subset. Give the energies (in the
+dimensionless units) and explicit formulae for the normalized
+eigenfunctions for the first two levels calculated by this method. Do
+the algebra of this problem by hand, i.e., do not use mathematical
+software to evaluate matrix elements or to solve for the eigenvalues
+and eigenfunctions.
 
-\begin{align*}
-  |\phi_1\rangle &= \frac{1}{5}(3|\psi_1\rangle + 4|\psi_2\rangle) \\
-  |\phi_2\rangle &= \frac{1}{5}(4|\psi_1\rangle - 3|\psi_2\rangle)
-\end{align*}
-
-Suppose a measurement is made of the quantity $c$, and the system is
-measured to be in state $|\phi_1\rangle$.
-Then a measurement is made of quantity $d$, and following that the
-quantity $c$ is again measured. What
-is the probability (expressed as a fraction) that the system will be
-found in state $|\psi_1\rangle$ on this second
-measurement of $c$?
-
-[Note: this is really a problem in quantum
-  mechanical measurement discussed in
-the previous Chapter, but is a good exercise in the use of the Dirac notation.]
-
-\boxedanswer{
-
-  \begin{align*}
-    \hat C |\phi_1\rangle &= c|\phi_1\rangle \\
-    \hat C |\phi_2\rangle &= c|\phi_2\rangle \\
-    \hat D |\psi_1\rangle &= d|\phi_1\rangle \\
-    \hat D |\psi_2\rangle &= d|\phi_2\rangle \\
-    | \phi_1 \rangle &= \frac{1}{5}(3|\psi_1\rangle + 4 | \psi_2 \rangle) \\
-    |\psi_1\rangle &= \frac{5}{3}| \phi_1 \rangle - \frac{4}{3}|
-    \psi_2 \rangle \\
-    |\phi_2\rangle &= \frac{1}{5}(4|\psi_1\rangle - 3|\psi_2\rangle) \\
-    |\psi_2\rangle &= \frac{4}{3}|\psi_1\rangle - \frac{5}{3}|\phi_2\rangle \\
-    |\psi_1\rangle &= \frac{5}{3}| \phi_1 \rangle - \frac{4}{3}
-    \left(\frac{4}{3}|\psi_1\rangle -
-    \frac{5}{3}|\phi_2\rangle\right) \\
-    |\psi_1\rangle &= \frac{5}{3}| \phi_1 \rangle
-    - \frac{16}{9}|\psi_1\rangle
-    + \frac{20}{9}|\phi_2\rangle \\
-    \frac{25}{9}|\psi_1\rangle
-    &= \frac{5}{3}| \phi_1 \rangle
-    + \frac{20}{9}|\phi_2\rangle \\
-    |\psi_1\rangle
-    &= \frac{3}{5}| \phi_1 \rangle
-    + \frac{4}{5}|\phi_2\rangle \\
-    |\psi_2\rangle &= \frac{4}{3}\left( \frac{3}{5}| \phi_1 \rangle
-    + \frac{4}{5}|\phi_2\rangle\right) - \frac{5}{3}|\phi_2\rangle \\
-    |\psi_2\rangle &= \frac{4}{5}| \phi_1 \rangle
-    - \frac{3}{5}|\phi_2\rangle \\
-  \end{align*}
-
-  The probability of getting state $\psi_1$ after measuring $d$,
-  given that the system is in state $\phi_1$.:
-
-  \begin{align*}
-    P(\psi_1) &= |\langle\psi_1|\phi_1\rangle|^2 =
-    \left(\frac{3}{5}\overbrace{\langle\psi_1|\psi_1\rangle}^1 + \frac{4}{5}
-    \cancel{\langle\psi_1| \psi_2 \rangle}\right)^2 \\
-    P(\psi_1) &= \frac{9}{25}
-  \end{align*}
-
-}
-
-\boxedanswer{
-  The probability of getting state $\psi_2$ after measuring $d$,
-  given that the system is in state $\phi_1$.:
-
-  \begin{align*}
-    P(\psi_2) &= |\langle\psi_2|\phi_1\rangle|^2 =
-    \left(\frac{3}{5}\cancel{\langle\psi_2|\psi_1\rangle} + \frac{4}{5}
-    \overbrace{\langle\psi_2| \psi_2 \rangle}^1\right)^2 \\
-    P(\psi_2) &= \frac{16}{25}
-  \end{align*}
-
-  The probability of getting state $\phi_1$ given state $\psi_1$:
-
-  \begin{align*}
-    P(\phi_1|\psi_1) &= |\langle \phi_1|\psi_1 \rangle|^2 =
-    \left(\frac{3}{5}\langle \phi_1| \phi_1 \rangle
-    + \frac{4}{5}\langle \phi_1|\phi_2\rangle\right)^2 \\
-    P(\phi_1|\psi_1) &= \left(\frac{3}{5}\overbrace{\langle \phi_1|
-      \phi_1 \rangle}^1
-    + \frac{4}{5}\cancel{\langle \phi_1|\phi_2\rangle}\right)^2 \\
-    P(\phi_1|\psi_1) &= \frac{9}{25} \\
-  \end{align*}
-
-  The probability of getting state $\phi_1$ given state $\psi_2$:
-
-  \begin{align*}
-    P(\phi_1|\psi_2) &= |\langle \phi_1|\psi_2 \rangle|^2 =
-    \left(\frac{4}{5}\overbrace{|\langle \phi_1| \phi_1 \rangle}^1
-    - \frac{3}{5}\cancel{|\langle \phi_1|\phi_2\rangle}\right)^2 \\
-    P(\phi_1|\psi_2) &= \frac{16}{25}
-  \end{align*}
-
-  Total probability:
-
-  \begin{align*}
-    P(\phi_2) &= P(\phi_1|\psi_1)P(\psi_1) + P(\phi_1|\psi_2)P(\psi_2) \\
-    P(\phi_2) &= \left(\frac{9}{25}\right)^2 + \left(\frac{16}{25}\right)^2 \\
-    \Aboxed{P(\phi_2) &= \frac{337}{625}}
-  \end{align*}
-}
+[Note: $\int_0^1(\xi-1/2)\sin(\pi\xi)\sin(2\pi\xi)d\xi=-(8/9\pi^2)$]
 
 \pagebreak
 
-\section*{4.10.3}
+\section*{Problem 6.3.2}
 
-Consider the orthonormal basis functions $\psi_1(x) = 1/\sqrt2$ and
-$\psi_2(x) = \sqrt{\frac{3}{2}}x$
-that are capable of representing any function of the form $f(x) = ax
-+ b$ defined over the range $-1 < x < 1$.
+Consider an electron in a one-dimensional potential well of width $L_z$,
+with infinitely high barriers on either side, and in which the potential energy
+inside the potential well is parabolic, of the form
 
-\begin{enumerate}[(i)]
-  \item Consider now the new basis functions $\phi_1(x) =
-    \frac{\sqrt{3}x}{2} + \frac{1}{2}$ and
-    $\phi_2(x) = \frac{\sqrt{3}x}{2} - \frac{1}{2}$.
-    Represent the functions $\phi_1(x)$ and $\phi_2(x)$ in a
-    two-dimensional diagram with orthogonal axes
-    corresponding to the functions $\psi_1(x)$ and $\psi_2(x)$
-    respectively. \label{first}
+\begin{equation}
+  V(z)=u(z-L_z/2)2
+\end{equation}
 
-    \boxedanswer{
+where $u$ is a real constant. This potential is presumed to be small
+compared to the energy E1 of the first confined state of a simple rectangular
+potential well of the same width $L_z$.
+[Note for interest: This kind of situation can arise in semiconductor
+  structures, where the parabolic curvature comes from the
+electrostatic potential of uniform background doping of the material.]
 
-      Express $f(x)$ in terms of $\psi_1$ and $\psi_2$:
-
-      \begin{align*}
-        1 &= \overbrace{\sqrt2}^b\psi_1(x) \\
-        x &= \overbrace{\sqrt\frac{2}{3}}^a\psi_2(x)
-      \end{align*}
-
-      In the $[\psi_1, \psi_2]$ space, $f(x) = b\cdot 1 + a\cdot x$
-      can be represented as $\left[b\sqrt{2}, a\sqrt{\frac{2}{3}}\right]$.
-
-      For $\phi_1$ and $\phi_2$:
-
-      \begin{align*}
-        \phi_1(x) &= \overbrace{\frac{\sqrt{3}}{2}}^{a}x +
-        \overbrace{\frac{1}{2}}^{b} \\
-        \phi_2(x) &=
-        \overbrace{\frac{\sqrt{3}}{2}}^{a}x
-        \overbrace{-\frac{1}{2}}^{b}
-      \end{align*}
-
-      $\phi_1:$ $\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right]$
-
-      $\phi_2:$ $\left[-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right]$
-
-      \centering
-
-      \input{src/fig_4_10_3.tex}
-      \captionof{figure}{Figure of functions on $\psi_1, \psi_2$ graph.}
-
-    }
-
-    \pagebreak
-
-  \item Construct the matrix that will transform a function in the
-    “old” representation as a vector $
-    \begin{bmatrix} c_1 \\ c_2
-    \end{bmatrix}$
-    into a new representation in terms of these new basis functions
-    as a vector $
-    \begin{bmatrix}d_1 \\ d_2
-    \end{bmatrix}$, where an arbitrary function
-    $f(x) = ax + b$
-    is represented as the linear combination
-    $f(x) = d_1 \phi_1(x) + d_2\phi_2(x)$. \label{second}
-
-    \boxedanswer{
-      \begin{align*}
-        [\phi_1]_\psi &=
-        \begin{bmatrix}
-          \frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2}
-        \end{bmatrix} \\
-        [\phi_2]_\psi &=
-        \begin{bmatrix}
-          -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2}
-        \end{bmatrix} \\
-        \begin{bmatrix}
-          c_1 \\ c_2 \\
-        \end{bmatrix} &=
-        \underbrace{
-          \begin{bmatrix}
-            \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\
-            \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
-        \end{bmatrix}}_M
-        \begin{bmatrix}
-          d_1 \\ d_2 \\
-        \end{bmatrix} \\
-        M^{-1} &=
-        \left[
-          \frac{\sqrt{2}}{2}
-          \begin{bmatrix}
-            1 & -1 \\
-            1 & 1 \\
-          \end{bmatrix}
-        \right]^{-1} \\
-        &\boxed{M^{-1} =
-          \frac{\sqrt{2}}{2}
-          \begin{bmatrix}
-            1 & 1 \\
-            -1 & 1 \\
-        \end{bmatrix}} \\
-        &\boxed{
-          \begin{bmatrix}
-            d_1 \\ d_2 \\
-          \end{bmatrix} =
-          \frac{\sqrt{2}}{2}
-          \begin{bmatrix}
-            1 & 1 \\
-            -1 & 1 \\
-          \end{bmatrix}
-          \begin{bmatrix}
-            c_1 \\ c_2 \\
-        \end{bmatrix}}
-      \end{align*}
-
-    }
-
-  \item Show that the matrix from part \ref{second} is unitary.
-
-    \boxedanswer{
-      \begin{align*}
-        \hat U^\dagger \hat U &= \hat I \\
-        \hat U^\dagger &= [M^{-1}]^T = M \\
-        \hat U &= M^{-1} \\
-        \hat U^\dagger \hat U &= MM^{-1} \\
-        \Aboxed{\hat U^\dagger \hat U &= I}
-      \end{align*}
-    }
-
-  \item Use the matrix of part \ref{second} to calculate the vector
-    $
-    \begin{bmatrix}d_1 \\ d_2
-    \end{bmatrix}$
-    for the specific example function $2x + 3$.
-
-    \boxedanswer{
-      \begin{align*}
-        \begin{bmatrix}
-          d_1 \\ d_2 \\
-        \end{bmatrix} &=
-        \frac{\sqrt{2}}{2}
-        \begin{bmatrix}
-          1 & 1 \\
-          -1 & 1 \\
-        \end{bmatrix}
-        \begin{bmatrix}
-          b\sqrt{2} \\ a\sqrt{\frac{2}{3}} \\
-        \end{bmatrix} \\
-        \begin{bmatrix}
-          d_1 \\ d_2 \\
-        \end{bmatrix} &=
-        \frac{\sqrt{2}}{2}
-        \begin{bmatrix}
-          1 & 1 \\
-          -1 & 1 \\
-        \end{bmatrix}
-        \begin{bmatrix}
-          3\sqrt{2} \\ 2\sqrt{\frac{2}{3}} \\
-        \end{bmatrix} \\
-        &\boxed{
-          \begin{bmatrix}
-            d_1 \\ d_2 \\
-          \end{bmatrix} =
-          \frac{\sqrt{2}}{2}
-          \begin{bmatrix}
-            3\sqrt{2} + 2\sqrt{\frac{2}{3}} \\ 2\sqrt{\frac{2}{3}} -
-            3\sqrt{2} \\
-        \end{bmatrix}}
-      \end{align*}
-    }
-
-  \item Indicate the resulting vector on the same diagram as used for
-    parts \ref{first}.
-
-    \boxedanswer{
-      \centering
-      \input{src/fig_4_10_3_v.tex}
-      \captionof{figure}{Updated diagram.}
-    }
-
-\end{enumerate}
+Find an approximate expression, valid in the limit of small $u$, for
+the transition energy between the first and second allowed states of this well
+in terms of $u$, $L_z$, and fundamental constants.
 
 \pagebreak
 
-\section*{4.11.1}
+\section*{Problem 7.1.2}
 
-For each of the following matrices, say whether or not it is unitary
-and whether or not it is Hermitian.
+Consider a one-dimensional semiconductor potential well of width Lz with
+potential barriers on either side approximated as being infinitely high. An
+electron in this potential well is presumed to behave with an effective mass
+$m_{eff}$. Initially, there is an electron in the lowest state of this
+potential well. We want to use this semiconductor structure as a detector for
+a very short electric field pulse. If the electron is found in the second
+energy state after the pulse, the electron is presumed to be collected as
+photocurrent by some mechanism, and the pulse is therefore detected.
 
-\begin{enumerate}[(i)]
-  \item $
-    \begin{bmatrix} 1 & 0 \\ 0 & 1
-    \end{bmatrix}$
-
-    \boxedanswer{
-      \begin{align*}
-        \hat U^\dagger &=
-        \begin{bmatrix} 1 & 0 \\ 0 & 1
-        \end{bmatrix} = I\\
-        \hat U &=
-        \begin{bmatrix} 1 & 0 \\ 0 & 1
-        \end{bmatrix} = I\\
-        \Aboxed{\hat U^\dagger\hat U &= I}
-      \end{align*} \\
-    }
-
-  \item $
-    \begin{bmatrix} 1 & i \\ -i & 1
-    \end{bmatrix}$
-
-    \boxedanswer{
-      \begin{align*}
-        \hat U^\dagger &=
-        \begin{bmatrix} 1 & i \\ -i & 1
-        \end{bmatrix}^T \\
-        \hat U^\dagger &=
-        \begin{bmatrix} 1 & -i \\ i & 1
-        \end{bmatrix} \\
-        \hat U &=
-        \begin{bmatrix} 1 & i \\ -i & 1
-        \end{bmatrix} \\
-        \hat U^\dagger\hat U &=
-        \begin{bmatrix}
-          1 & i \\ -i & 1
-        \end{bmatrix}
-        \begin{bmatrix}
-          1 & -i \\ i & 1
-        \end{bmatrix} \\
-        &\boxed{\hat U^\dagger\hat U =
-          \begin{bmatrix}
-            0 & 0 \\
-            0 & 0
-        \end{bmatrix}}
-      \end{align*}
-    }
-
-  \item $
-    \begin{bmatrix} i & 0 \\ 0 & i
-    \end{bmatrix}$
-
-    \boxedanswer{
-      \begin{align*}
-        \hat U^\dagger &=
-        \begin{bmatrix}
-          i & 0 \\ 0 & i
-        \end{bmatrix} \\
-        \hat U &=
-        \begin{bmatrix}
-          i & 0 \\ 0 & i
-        \end{bmatrix} \\
-        &\boxed{\hat U^\dagger\hat U =
-          \begin{bmatrix}
-            -1 & 0 \\ 0 & -1
-        \end{bmatrix}}
-      \end{align*}
-    }
-
-    \pagebreak
-
-  \item $
-    \begin{bmatrix} 0 & 1 \\ i & 0
-    \end{bmatrix}$
-
-    \boxedanswer{
-      \begin{align*}
-        \hat U^\dagger &=
-        \begin{bmatrix} 0 & i \\ 1 & 0
-        \end{bmatrix} \\
-        \hat U &=
-        \begin{bmatrix} 0 & 1 \\ i & 0
-        \end{bmatrix} \\
-        &\boxed{\hat U^\dagger\hat U =
-          \begin{bmatrix} -1 & 0 \\ 0 & 1
-        \end{bmatrix}}
-      \end{align*}
-    }
-
-\end{enumerate}
-
-\pagebreak
-
-\section*{4.11.3 (i)}
-
-Consider the Hermiticity of the following operators.
-
-\begin{enumerate}[(i)]
-  \item Prove that the momentum operator is Hermitian. For simplicity
-    you may perform this proof
-    for a one-dimensional system (i.e., only consider functions of
-    $x$, and consider only the $\hat p_x$ operator).
-
-    [Hints: Consider $\int_{-\infty}^\infty \psi_i^*(x)p_x\psi_j(x)dx$
-      where the $\psi_n(x)$ are a complete orthonormal set.
-      You may want to consider an integration by parts. Note that the
-      $\psi_n(x)$ must vanish at $\pm \infty$,
-    since otherwise they could not be normalized.]
-
-    \boxedanswer{
-      The momentum operator is:
-      \begin{align*}
-        \hat p_x &= -i\hbar\frac{d}{dx}
-      \end{align*}
-
-      To be Hermitian, the following must be true:
-
-      \begin{align*}
-        \int_{-\infty}^\infty \psi_i^*(x) \hat A \psi_j(x)dx &=
-        \int_{-\infty}^\infty \left[\hat A\psi_i^(x)\right]^*\psi_j(x)dx
-      \end{align*}
-
-      Note that $\int udv = uv - \int vdu$
-
-      Solve:
-
-      \begin{align*}
-        \int_{-\infty}^\infty \psi_i^*(x) \hat p \psi_j(x)dx
-        &=\int_{-\infty}^\infty \psi_i^*(x)
-        \left(-i\hbar\frac{d}{dx}\right) \psi_j(x)dx \\
-        &= -i\hbar \int_{-\infty}^\infty \psi_i^*(x)
-        \frac{d}{dx} \psi_j(x)dx \\
-        &= -i\hbar
-        \left[\overbrace{\psi_i^*(x)\psi_j(x)\Biggr|_{-\infty}^\infty}^0 -
-        \int_{-\infty}^\infty \psi_j(x)\frac{d\psi_i^*}{dx}dx \right] \\
-        &= i\hbar
-        \int_{-\infty}^\infty \frac{d\psi_j^*}{dx}\psi_i(x)dx \\
-        \int_{-\infty}^\infty \left[\hat p\psi_i^*(x)\right]^*\psi_j(x)dx &=
-        \int_{-\infty}^\infty
-        \left[-i\hbar\frac{d}{dx}\psi_j\right]^*\psi_i(x)dx \\
-        &=
-        -i\hbar\int_{-\infty}^\infty
-        \frac{d\psi_j^*}{dx}\psi_i(x)dx
-      \end{align*}
-
-      Therefore, the momentum operator is Hermitian.
-    }
-
-\end{enumerate}
-
-\pagebreak
-
-\section*{5.1.1}
-
-The Pauli spin matrices are quantum mechanical operators that operate
-in a two-dimensional
-Hilbert space, and can be written as
+To model this device, we presume that the electric field pulse F (t ) can be
+approximated as a “half-cycle” pulse of length Δt , i.e., a pulse of the form
 
 \begin{equation*}
-  \hat\sigma_x =
-  \begin{bmatrix} 0 & 1 \\ 1 & 0
-  \end{bmatrix}, \hat\sigma_y =
-  \begin{bmatrix} 0 & -i \\ i & 0
-  \end{bmatrix}, \hat\sigma_z =
-  \begin{bmatrix}
-    1 & 0 \\ 0 & -1
-  \end{bmatrix}
+  F(t) = F_0\sin\left(\frac{\pi t}{\Delta t} \right)
 \end{equation*}
 
-Find the commutation relations between each pair of these operators,
-proving your answer by explicit
-matrix multiplication, and simplifying the answers as much as possible.
+for times $t$ from $0$ to $\Delta t$, and zero for all other times.
 
-\boxedanswer{
-  \begin{align*}
-    [\hat \sigma_x \hat \sigma_y, \hat \sigma_y \hat \sigma_x] &=
-    \hat \sigma_x \hat \sigma_y - \hat \sigma_y \hat \sigma_x \\
-    \begin{bmatrix}
-      0 & 1 \\ 1 & 0
-    \end{bmatrix}
-    \begin{bmatrix}
-      0 & -i \\ i & 0
-    \end{bmatrix} &=
-    \begin{bmatrix}
-      i & 0 \\
-      0 & -i \\
-    \end{bmatrix} \\
-    \begin{bmatrix}
-      0 & -i \\ i & 0
-    \end{bmatrix}
-    \begin{bmatrix}
-      0 & 1 \\ 1 & 0
-    \end{bmatrix}
-    &=
-    \begin{bmatrix}
-      -i & 0 \\
-      0 & i \\
-    \end{bmatrix} \\
-    &\boxed{[\hat \sigma_x \hat \sigma_y, \hat \sigma_y \hat \sigma_x] =
-      2
-      \begin{bmatrix}
-        i & 0 \\
-        0 & -i \\
-    \end{bmatrix}} \\
-    [\hat \sigma_x \hat \sigma_z, \hat \sigma_z \hat \sigma_x] &=
-    \hat \sigma_x \hat \sigma_z - \hat \sigma_z \hat \sigma_x \\
-    \begin{bmatrix}
-      0 & 1 \\ 1 & 0
-    \end{bmatrix}
-    \begin{bmatrix}
-      1 & 0 \\ 0 & -1
-    \end{bmatrix} &=
-    \begin{bmatrix}
-      0 & -1 \\
-      1 & 0 \\
-    \end{bmatrix}
-    \\
-    \begin{bmatrix}
-      1 & 0 \\ 0 & -1
-    \end{bmatrix}
-    \begin{bmatrix}
-      0 & 1 \\ 1 & 0
-    \end{bmatrix}
-    &=
-    \begin{bmatrix}
-      0 & 1 \\
-      -1 & 0 \\
-    \end{bmatrix}
-    \\
-    &\boxed{[\hat \sigma_x \hat \sigma_z, \hat \sigma_z \hat \sigma_x] =
-      2
-      \begin{bmatrix}
-        0 & -1 \\
-        1 & 0 \\
-    \end{bmatrix}} \\
-    [\hat \sigma_y \hat \sigma_z, \hat \sigma_z \hat \sigma_y] &=
-    \hat \sigma_y \hat \sigma_z - \hat \sigma_z \hat \sigma_y \\
-    \begin{bmatrix}
-      0 & -i \\ i & 0
-    \end{bmatrix}
-    \begin{bmatrix}
-      1 & 0 \\ 0 & -1
-    \end{bmatrix} &=
-    \begin{bmatrix}
-      0 & i \\
-      i & 0 \\
-    \end{bmatrix}
-    \\
-    \begin{bmatrix}
-      1 & 0 \\ 0 & -1
-    \end{bmatrix}
-    \begin{bmatrix}
-      0 & -i \\ i & 0
-    \end{bmatrix}
-    &=
-    \begin{bmatrix}
-      0 & -i \\
-      -i & 0 \\
-    \end{bmatrix}
-    \\
-    &\boxed{[\hat \sigma_y \hat \sigma_z, \hat \sigma_z \hat \sigma_y] =
-      2
-      \begin{bmatrix}
-        0 & i \\
-        i & 0 \\
-    \end{bmatrix}} \\
-  \end{align*}
-}
-
-\pagebreak
-
-\section*{5.4.3}
-
-Formally transform the momentum operator $\hat p_z$ into the momentum
-basis using algebra similar to
-that above for the transformation of the position operator into the
-momentum basis.
-
-\boxedanswer{
-  \begin{align*}
-    \hat p_k |f\rangle &= U \hat p_zU^\dagger | f \rangle \\
-    \hat p_k|f\rangle &= \frac{1}{2\pi}\int\exp(-i kz)\int -i\hbar
-    \frac{\delta}{\delta z}\exp(ik'z)f(k')dk'dz \\
-    \hat p_k|f\rangle &= \frac{i\hbar}{2\pi}\int\exp(-i kz)\int
-    \frac{\delta}{\delta z}\exp(ik'z)f(k')dk'dz \\
-    \hat p_k|f\rangle &= \frac{i\hbar}{2\pi}\int\exp(-i kz)\int
-    ik'\exp(ik'z)f(k')dk'dz \\
-    \hat p_k|f\rangle &= \frac{i\hbar}{2\pi}\int\int
-    ik'\exp(i(k'-k)z)f(k')dk'dz \\
-    & \int e^{-i(k' -k)z} = 2\pi\delta (k' - k) \\
-    \hat p_k|f\rangle &= \hbar\int
-    k'\delta(k'-k)f(k')dk \\
-    \hat p_k|f\rangle &= \underbrace{\hbar k}^{\hat p_k}f(k) \\
-    \Aboxed{\hat p_k &= \hbar k}
-  \end{align*}
-}
+\begin{enumerate}[(i)]
+  \item Find an approximate expression, valid for sufficiently small field
+    amplitude $F_o$, for the probability of finding the electron in its
+    second state after the pulse.
+  \item For a pulse of length $\Delta t = \SI{100}{\femto\second}$, and a
+    \ch{GaAs} semiconductor structure with $m_{eff} = 0.07m_o$ and
+    width $L_z = \SI{10}{\nano\meter}$, for what minimum electric field
+    magnitude $F_o$ does this detector have at least a \SI{1}{\percent}
+    chance of detecting the pulse?
+  \item For a full cycle pulse (i.e., one of the form $F(t) =
+      F_o\sin(2\pi t/\Delta t)$
+      for times $t$ from $0$ to $\Delta t$, and zero for all other
+    times), what is the probability of detecting the pulse with this detector?
+    Justify your answer.
+\end{enumerate}
 
 \pagebreak
 
