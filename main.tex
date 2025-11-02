@@ -23,156 +23,226 @@ and eigenfunctions.
 [Note: $\int_0^1(\xi-1/2)\sin(\pi\xi)\sin(2\pi\xi)d\xi=-(8/9\pi^2)$]
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.35\textwidth]{./assets/fig_6_2_1.png}
+  \centering
+  \includegraphics[width=0.35\textwidth]{./assets/fig_6_2_1.png}
 \end{figure}
 
 \boxedanswer{
 
-    The original Hamiltonian is:
+  The original Hamiltonian is:
 
-    \begin{align*}
-        V(z) &= e\mathrm{E}(z - L_z/2) \\
-        \hat H &= -\frac{\hbar^2}{2m}\frac{d^2}{dz^2} + e\mathrm{E}(z - L_z/2) \\
-    \end{align*}
+  \begin{align*}
+    V(z) &= e\mathrm{E}(z - L_z/2) \\
+    \hat H &= -\frac{\hbar^2}{2m}\frac{d^2}{dz^2} + e\mathrm{E}(z - L_z/2) \\
+  \end{align*}
 
-    Some definitions:
+  Some definitions:
 
-    \begin{align*}
-        E_1^\infty &= \left(\frac{\hbar^2}{2}\right)\left(\frac{\pi}{L_z}\right)^2 \\ \\
-        \eta_n &= \frac{E_n}{E_1^\infty} \text{\qquad(Dimensionless eigenenergy of the $n$\textsuperscript{th} eigenstate.)}\\
-        \mathrm{E}_o &= \frac{E_o}{eL_z} \\
-        \mathrm{f} &= \mathrm{\frac{E}{E_o}} \text{\qquad Dimensionless field} \\
-        \xi &= \frac{z}{L_z} \text{\qquad Dimensionless length}
-    \end{align*}
+  \begin{align*}
+    E_1^\infty &=
+    \left(\frac{\hbar^2}{2}\right)\left(\frac{\pi}{L_z}\right)^2 \\ \\
+    \eta_n &= \frac{E_n}{E_1^\infty} \text{\qquad(Dimensionless
+    eigenenergy of the $n$\textsuperscript{th} eigenstate.)}\\
+    \mathrm{E}_o &= \frac{E_o}{eL_z} \\
+    \mathrm{f} &= \mathrm{\frac{E}{E_o}} \text{\qquad Dimensionless field} \\
+    \xi &= \frac{z}{L_z} \text{\qquad Dimensionless length}
+  \end{align*}
 
-    $E_n$ is the well eigenenergy, $E_1^\infty$ is the confinement energy of
-    the first state of the infinite well.
+  $E_n$ is the well eigenenergy, $E_1^\infty$ is the confinement energy of
+  the first state of the infinite well.
 
-    The Hamiltonian becomes:
+  The Hamiltonian becomes:
 
-    \begin{equation*}
-        \hat H = -\frac{1}{\pi^2}\frac{d^2}{d\xi^2} + f(\xi - 1/2)
-    \end{equation*}
+  \begin{equation*}
+    \hat H = -\frac{1}{\pi^2}\frac{d^2}{d\xi^2} + f(\xi - 1/2)
+  \end{equation*}
 
-    The unperturbed Schr\"odinger equation:
+  The unperturbed Schr\"odinger equation:
 
-    \begin{equation*}
-        \hat H_o \psi_n = \varepsilon_n\psi_n
-    \end{equation*}
+  \begin{equation*}
+    \hat H_o \psi_n = \varepsilon_n\psi_n
+  \end{equation*}
 
 }
 
 \pagebreak
 
-\boxedanswer{    
+\boxedanswer{
 
+  And the general solution:
 
-    And the general solution:
+  \begin{equation*}
+    \psi_n(\xi) = \sqrt{2}\sin(n\pi\xi)
+  \end{equation*}
 
-    \begin{equation*}
-        \psi_n(\xi) = \sqrt{2}\sin(n\pi\xi)
-    \end{equation*}
+  We can construct the Hamiltonian as a matrix:
 
-    We can construct the Hamiltonian as a matrix:
+  \begin{align*}
+    H_{ij} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi)
+    \frac{d^2}{d\xi^2} \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi
+    - 1/2)\phi_j(\xi) d\xi
+  \end{align*}
 
-    \begin{align*}
-        H_{ij} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2} \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\phi_j(\xi) d\xi
-    \end{align*}
+  By taking the basis as the first three eignfunctions, we range $i$ and $j$
+  from 1 to 2.
 
-    By taking the basis as the first three eignfunctions, we range $i$ and $j$ 
-    from 1 to 2.
-
-    \begin{align*}
-        H_{1,1} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2} 
-            \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
-                & \begin{aligned}
-                    \psi_1(\xi) &= \psi_1^*(\xi) = \sqrt{2}\sin(\pi\xi) \\
-                    \frac{d^2}{d\xi^2} \psi_j(\xi) &= -\sqrt{2}\pi^2\sin(\pi\xi) \\
-                \end{aligned} \\
-        H_{1,1} &= -\frac{1}{\pi^2} \int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right) 
-            \left(-\sqrt{2}\pi^2\sin(\pi\xi)\right) d\xi + 
-            f\int_0^1 (\xi - 1/2)\left(\sqrt{2}\sin(\pi\xi)\right)^2 d\xi \\
-        H_{1,1} &= 2\pi^2\frac{1}{\pi^2} \int_0^1 \sin^2(\pi\xi) 
-             d\xi + 2f\int_0^1 (\xi - 1/2)\sin^2(\pi\xi)
-             d\xi \\
-                &\begin{aligned}
-                    % u &= (\xi - 1/2) \\
-                    % du &= d\xi \\
-                    % dv &= \sin^2(\pi \xi) = \frac{1}{2}\left[1 - \cos(2\pi\xi)\right]d\xi \\
-                    % v &= \sin^2(\pi \xi) = \frac{1}{2}\left[\xi - \frac{1}{2\pi}\sin(2\pi\xi)\right] \\
-                    % 2f\int_0^1 (\xi - 1/2)\sin^2(\pi\xi)^2
-                    % d\xi &= 2f\left[uv\right]_0^1 - \int_0^1 vdu\\
-                    2f\int_0^1 \overbrace{(\xi - 1/2)}^{\text{odd}}\overbrace{\sin^2(\pi\xi)^2 
-                }^{\text{even}}d\xi &= 0 \\
-                    % \cancel{\left[(\xi-1/2)\frac{1}{2}\left[1-\cos(2\pi\xi)\right]d\xi\right]_0^1}
-                    %     -\int_0^1\frac{1}{2}\left[\xi-\frac{1}{2\pi}\sin(2\pi\xi)\right]d\xi \\
-                    % 2f\int_0^1(\xi-1/2)\sin^2(\pi\xi)^2
-                    %     d\xi&=-\frac{1}{4}\left[\xi^2+\frac{1}{2\pi^2}
-                    %     \cos(2\pi\xi)\right]_0^1 \\
-                    % 2f\int_0^1(\xi-1/2)\sin^2(\pi\xi)^2
-                    %         d\xi&=-\frac{1}{4} \\
-                    2\int_0^1 \sin^2(\pi\xi) d\xi &=
-                        2\int_0^1\frac{1}{2}\left[1 - \cos(2\pi\xi) \right]d\xi \\ 
-                    2\int_0^1 \sin^2(\pi\xi) d\xi &=
-                    \left[\xi - \frac{1}{2\pi}\sin(2\pi\xi)\right]_0^1 \\ 
-                    2\int_0^1 \sin^2(\pi\xi) d\xi &= 1 \\ 
-                \end{aligned} \\
-        H_{2,2} &= -\frac{1}{\pi^2} \int_0^1 \psi_2^*(\xi) \frac{d^2}{d\xi^2} 
-            \psi_2(\xi) d\xi + f\int_0^1 \psi_2^*(\xi)(\xi - 1/2)\psi_2(\xi) d\xi \\
-                & \begin{aligned}
-                    \frac{d^2}{d\xi^2} \psi_2(\xi) &= -4\sqrt{2}\pi^2\sin(2\pi\xi) \\
-                \end{aligned} \\
-        H_{2,2} &= 8\int_0^1\sin^2(2\pi\xi) 
-             d\xi+\cancel{2f\int_0^1(\xi-1/2)\sin^2(2\pi\xi)d\xi}\\
-        H_{2,2} &= 4\int_0^1\left[1-\cos(4\pi\xi)\right] \\
-        H_{2,2} &= 4\left[\xi-\frac{1}{4\pi}\sin(4\pi\xi)\right]_0^1 \\
-        H_{2,2} &= 4 \\
-        H_{1,2} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2} 
-            \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
-                & \begin{aligned}
-                    \psi_i^*(\xi) &= \sqrt{2}\sin(\pi\xi) \\
-                    \psi_j(\xi) &= \sqrt{2}\sin(2\pi\xi) \\
-                    \frac{d^2}{d\xi^2} \psi_j(\xi) &= 
-                    -4\sqrt{2}\pi^2\sin(2\pi\xi) \\
-                \end{aligned}
-    \end{align*}
+  \begin{align*}
+    H_{1,1} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2}
+    \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
+    &
+    \begin{aligned}
+      \psi_1(\xi) &= \psi_1^*(\xi) = \sqrt{2}\sin(\pi\xi) \\
+      \frac{d^2}{d\xi^2} \psi_j(\xi) &= -\sqrt{2}\pi^2\sin(\pi\xi) \\
+    \end{aligned} \\
+    H_{1,1} &= -\frac{1}{\pi^2} \int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right)
+    \left(-\sqrt{2}\pi^2\sin(\pi\xi)\right) d\xi +
+    f\int_0^1 (\xi - 1/2)\left(\sqrt{2}\sin(\pi\xi)\right)^2 d\xi \\
+    H_{1,1} &= 2\pi^2\frac{1}{\pi^2} \int_0^1 \sin^2(\pi\xi)
+    d\xi + 2f\int_0^1 (\xi - 1/2)\sin^2(\pi\xi)
+    d\xi \\
+    &
+    \begin{aligned}
+      2f\int_0^1 \overbrace{(\xi - 1/2)}^{\text{odd}}\overbrace{\sin^2(\pi\xi)^2
+      }^{\text{even}}d\xi &= 0 \\
+      2\int_0^1 \sin^2(\pi\xi) d\xi &=
+      2\int_0^1\frac{1}{2}\left[1 - \cos(2\pi\xi) \right]d\xi \\
+      2\int_0^1 \sin^2(\pi\xi) d\xi &=
+      \left[\xi - \frac{1}{2\pi}\sin(2\pi\xi)\right]_0^1 \\
+      2\int_0^1 \sin^2(\pi\xi) d\xi &= 1 \\
+    \end{aligned} \\ H_{2,2} &= -\frac{1}{\pi^2} \int_0^1
+    \psi_2^*(\xi) \frac{d^2}{d\xi^2}
+    \psi_2(\xi) d\xi + f\int_0^1 \psi_2^*(\xi)(\xi - 1/2)\psi_2(\xi) d\xi \\
+    &
+    \begin{aligned}
+      \frac{d^2}{d\xi^2} \psi_2(\xi) &= -4\sqrt{2}\pi^2\sin(2\pi\xi) \\
+    \end{aligned} \\
+    H_{2,2} &= 8\int_0^1\sin^2(2\pi\xi)
+    d\xi+\cancel{2f\int_0^1(\xi-1/2)\sin^2(2\pi\xi)d\xi}\\
+    H_{2,2} &= 4\int_0^1\left[1-\cos(4\pi\xi)\right] \\
+    H_{2,2} &= 4\left[\xi-\frac{1}{4\pi}\sin(4\pi\xi)\right]_0^1 \\
+    H_{2,2} &= 4 \\
+    H_{1,2} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2}
+    \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
+    &
+    \begin{aligned}
+      \psi_i^*(\xi) &= \sqrt{2}\sin(\pi\xi) \\
+      \psi_j(\xi) &= \sqrt{2}\sin(2\pi\xi) \\
+      \frac{d^2}{d\xi^2} \psi_j(\xi) &=
+      -4\sqrt{2}\pi^2\sin(2\pi\xi) \\
+    \end{aligned}
+  \end{align*}
 
 }
 
 \boxedanswer{
-    \begin{align*} 
-        H_{1,2} &= -\frac{1}{\pi^2} \int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right) 
-            \left(-4\sqrt{2}\pi^2\sin(2\pi\xi)\right)d\xi+ 
-            f\int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right)(\xi - 1/2)
-            \left(\sqrt{2}\sin(2\pi\xi)\right) d\xi \\
-        H_{1,2} &= 8\underbrace{\int_0^1 \overbrace{\sin(\pi\xi)}^{\text{even}}
-        \overbrace{\sin(2\pi\xi)}^{\text{odd}}d\xi}_0 - 
-        2\overbrace{f}^3\overbrace{\int_0^1 (\xi - 1/2)\sin(\pi\xi)
-            \sin(2\pi\xi)}^{\frac{8}{9\pi^2}}d\xi \\
-            H_{1,2} &= -\frac{16}{3\pi^2} \\
-        H_{2,1} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2} 
-            \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
-                & \begin{aligned}
-                    \psi_i^*(\xi) &= \sqrt{2}\sin(2\pi\xi) \\
-                    \psi_j(\xi) &= \sqrt{2}\sin(\pi\xi) \\
-                    \frac{d^2}{d\xi^2} \psi_j(\xi) &= 
-                    -\sqrt{2}\pi^2\sin(2\pi\xi) \\
-                \end{aligned} \\
-        H_{2,1} &= -\frac{1}{\pi^2} \int_0^1  
-        \left(\sqrt{2}\sin(2\pi\xi)\right)\left(-\sqrt{2}\pi^2\sin(\pi\xi)\right)d\xi+ 
-            f\int_0^1 \left(\sqrt{2}\sin(2\pi\xi)\right)(\xi - 1/2)
-            \left(\sqrt{2}\sin(\pi\xi)\right) d\xi \\
-        H_{2,1} &= \underbrace{\int_0^1 \overbrace{\sin(2\pi\xi)}^{\text{odd}}
-            \overbrace{\sin(\pi\xi)}^{\text{even}}d\xi}_0 - 
-        2\overbrace{f}^3\overbrace{\int_0^1 (\xi - 1/2)\sin(\pi\xi)
-            \sin(2\pi\xi)}^{\frac{8}{9\pi^2}}d\xi \\
-            H_{2,1} &= -\frac{16}{3\pi^2} \\
-            &\boxed{\hat H = \begin{bmatrix}
-                1 & -\frac{16}{3\pi^2} \\
-                -\frac{16}{3\pi^2} & 4 \\
-            \end{bmatrix}}
-    \end{align*}
+  \begin{align*}
+    H_{1,2} &= -\frac{1}{\pi^2} \int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right)
+    \left(-4\sqrt{2}\pi^2\sin(2\pi\xi)\right)d\xi+
+    f\int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right)(\xi - 1/2)
+    \left(\sqrt{2}\sin(2\pi\xi)\right) d\xi \\
+    H_{1,2} &= 8\underbrace{\int_0^1 \overbrace{\sin(\pi\xi)}^{\text{even}}
+    \overbrace{\sin(2\pi\xi)}^{\text{odd}}d\xi}_0 -
+    2\overbrace{f}^3\overbrace{\int_0^1 (\xi - 1/2)\sin(\pi\xi)
+    \sin(2\pi\xi)}^{\frac{8}{9\pi^2}}d\xi \\
+    H_{1,2} &= -\frac{16}{3\pi^2} \\
+    H_{2,1} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2}
+    \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
+    &
+    \begin{aligned}
+      \psi_i^*(\xi) &= \sqrt{2}\sin(2\pi\xi) \\
+      \psi_j(\xi) &= \sqrt{2}\sin(\pi\xi) \\
+      \frac{d^2}{d\xi^2} \psi_j(\xi) &=
+      -\sqrt{2}\pi^2\sin(2\pi\xi) \\
+    \end{aligned} \\
+    H_{2,1} &= -\frac{1}{\pi^2} \int_0^1
+    \left(\sqrt{2}\sin(2\pi\xi)\right)\left(-\sqrt{2}\pi^2\sin(\pi\xi)\right)d\xi+
+    f\int_0^1 \left(\sqrt{2}\sin(2\pi\xi)\right)(\xi - 1/2)
+    \left(\sqrt{2}\sin(\pi\xi)\right) d\xi \\
+    H_{2,1} &= \underbrace{\int_0^1 \overbrace{\sin(2\pi\xi)}^{\text{odd}}
+    \overbrace{\sin(\pi\xi)}^{\text{even}}d\xi}_0 -
+    2\overbrace{f}^3\overbrace{\int_0^1 (\xi - 1/2)\sin(\pi\xi)
+    \sin(2\pi\xi)}^{\frac{8}{9\pi^2}}d\xi \\
+    H_{2,1} &= -\frac{16}{3\pi^2} \\
+    &\hat H =
+    \begin{bmatrix}
+      1 & -\frac{16}{3\pi^2} \\
+      -\frac{16}{3\pi^2} & 4 \\
+    \end{bmatrix} \\
+    \hat H \phi(\xi) &= \eta \phi(\xi) \\
+    \phi(\eta) &=c_1\psi_1(\xi) + c_2\psi_2(\xi) \\
+    |\hat H- \eta I|c &= 0 \\
+    & a = \frac{16}{3\pi^2} \\
+    0 &=
+    \begin{bmatrix}
+      1 - \eta & -a \\
+      -a & 4 - \eta \\
+    \end{bmatrix}
+    \begin{bmatrix}
+      c_1 \\ c_2
+    \end{bmatrix} \\
+    0 &= (1 - \eta)c_1 - ac_2 \\
+    0 &= -ac_1 + (4 - \eta)c_2 \\
+    c_2 &= \frac{1 - \eta}{a}c_1 \\
+    c &\propto
+    \begin{bmatrix}
+      1 \\ \frac{1 - \eta}{a} \\
+    \end{bmatrix} \\
+    c &= \frac{1}{\sqrt{1 + \left(\frac{1 - \eta}{a}\right)^2}}
+    \begin{bmatrix}
+      1 \\ \frac{1 - \eta}{a} \\
+    \end{bmatrix} \\
+    \left|\hat H - \eta I\right| &= (1 - \eta)(4 - \eta) - a^2 = 0 \\
+    0 &= \underbrace{1}_d\eta^2 \underbrace{- 5}_b\eta +
+    \underbrace{4 - a^2}_c \\
+    \eta &= \frac{-b \pm \sqrt{b^2 - 4dc}}{2d}
+  \end{align*}
+}
+
+\boxedanswer{
+  \begin{align*}
+    \eta &= \frac{-(5) \pm \sqrt{(-5)^2 - 4(1)(4-a^2)}}{2d} \\
+    \eta &= \frac{5}{2} \pm \sqrt{\frac{9}{4} + a^2} \\
+    \Aboxed{\eta &= \frac{5}{2} \pm \sqrt{\frac{9}{4} +
+    \left(\frac{16}{3\pi^2}\right)^2}} \\
+    c_1 &= \frac{1}{\sqrt{1 + \left(\frac{1 - \frac{5}{2} - \sqrt{\frac{9}{4} +
+    \left(\frac{16}{3\pi^2}\right)^2}}{\frac{16}{3\pi^2}}\right)^2}}
+    \begin{bmatrix}
+      1 \\ \frac{1 - \frac{5}{2} - \sqrt{\frac{9}{4} +
+      \left(\frac{16}{3\pi^2}\right)^2}}{\frac{16}{3\pi^2}} \\
+    \end{bmatrix} \\
+    c_1 &=
+    \begin{bmatrix}\frac{16\sqrt{2}}{\sqrt{81\pi ^4+9\pi
+      ^2\sqrt{81\pi ^4+1024}+1024}}\\ \frac{-9\pi ^2-\sqrt{81\pi
+      ^4+1024}}{\sqrt{2}\sqrt{81\pi ^4+9\pi ^2\sqrt{81\pi ^4+1024}+1024}}\\ 0
+    \end{bmatrix} \\
+    c_2 &= \frac{1}{\sqrt{1 + \left(\frac{1 - \frac{5}{2} + \sqrt{\frac{9}{4} +
+    \left(\frac{16}{3\pi^2}\right)^2}}{\frac{16}{3\pi^2}}\right)^2}}
+    \begin{bmatrix}
+      1 \\ \frac{1 - \frac{5}{2} + \sqrt{\frac{9}{4} +
+      \left(\frac{16}{3\pi^2}\right)^2}}{\frac{16}{3\pi^2}} \\
+    \end{bmatrix} \\
+    c_2 &=
+    \begin{bmatrix}\frac{16\sqrt{2}}{\sqrt{81\pi ^4-9\pi
+      ^2\sqrt{81\pi ^4+1024}+1024}}\\ \frac{-9\pi ^2+\sqrt{81\pi
+      ^4+1024}}{\sqrt{2}\sqrt{81\pi ^4-9\pi ^2\sqrt{81\pi ^4+1024}+1024}}\\
+    \end{bmatrix} \\
+    &\boxed{\phi_1 =
+      \begin{bmatrix}\frac{16\sqrt{2}}{\sqrt{81\pi ^4+9\pi
+        ^2\sqrt{81\pi ^4+1024}+1024}}\\ \frac{-9\pi ^2-\sqrt{81\pi
+        ^4+1024}}{\sqrt{2}\sqrt{81\pi ^4+9\pi ^2\sqrt{81\pi ^4+1024}+1024}}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        \sqrt{2}\sin(\pi\xi) & \sqrt{2}\sin(2\pi\xi) \\
+    \end{bmatrix}} \\
+    &\boxed{\phi_2 =
+      \begin{bmatrix}\frac{16\sqrt{2}}{\sqrt{81\pi ^4-9\pi
+        ^2\sqrt{81\pi ^4+1024}+1024}}\\ \frac{-9\pi ^2+\sqrt{81\pi
+        ^4+1024}}{\sqrt{2}\sqrt{81\pi ^4-9\pi ^2\sqrt{81\pi ^4+1024}+1024}}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        \sqrt{2}\sin(\pi\xi) & \sqrt{2}\sin(2\pi\xi) \\
+    \end{bmatrix}}
+  \end{align*}
 }
 
 \pagebreak
@@ -180,11 +250,12 @@ and eigenfunctions.
 \section*{Problem 6.3.2}
 
 Consider an electron in a one-dimensional potential well of width $L_z$,
-with infinitely high barriers on either side, and in which the potential energy
+with infinitely high barriers on either side, and in which the
+potential energy
 inside the potential well is parabolic, of the form
 
 \begin{equation}
-  V(z)=u(z-L_z/2)2
+  V(z)=u(z-L_z/2)^22
 \end{equation}
 
 where $u$ is a real constant. This potential is presumed to be small
@@ -197,6 +268,21 @@ electrostatic potential of uniform background doping of the material.]
 Find an approximate expression, valid in the limit of small $u$, for
 the transition energy between the first and second allowed states of this well
 in terms of $u$, $L_z$, and fundamental constants.
+
+\boxedanswer{
+  We will use time-inependent perterbation theory to solve this problem:
+
+  The unperturbed system is as follows:
+  \begin{equation*}
+    \hat H_0 | \psi_n \rangle = E_n | \psi_n\rangle \\
+  \end{equation*}
+
+  The perturbation Hamiltonian can be written:
+
+  \begin{equation*}
+    \hat H_p = u(z - L_z/2)^2 \\
+  \end{equation*}
+}
 
 \pagebreak
 
