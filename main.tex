@@ -22,6 +22,159 @@ and eigenfunctions.
 
 [Note: $\int_0^1(\xi-1/2)\sin(\pi\xi)\sin(2\pi\xi)d\xi=-(8/9\pi^2)$]
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.35\textwidth]{./assets/fig_6_2_1.png}
+\end{figure}
+
+\boxedanswer{
+
+    The original Hamiltonian is:
+
+    \begin{align*}
+        V(z) &= e\mathrm{E}(z - L_z/2) \\
+        \hat H &= -\frac{\hbar^2}{2m}\frac{d^2}{dz^2} + e\mathrm{E}(z - L_z/2) \\
+    \end{align*}
+
+    Some definitions:
+
+    \begin{align*}
+        E_1^\infty &= \left(\frac{\hbar^2}{2}\right)\left(\frac{\pi}{L_z}\right)^2 \\ \\
+        \eta_n &= \frac{E_n}{E_1^\infty} \text{\qquad(Dimensionless eigenenergy of the $n$\textsuperscript{th} eigenstate.)}\\
+        \mathrm{E}_o &= \frac{E_o}{eL_z} \\
+        \mathrm{f} &= \mathrm{\frac{E}{E_o}} \text{\qquad Dimensionless field} \\
+        \xi &= \frac{z}{L_z} \text{\qquad Dimensionless length}
+    \end{align*}
+
+    $E_n$ is the well eigenenergy, $E_1^\infty$ is the confinement energy of
+    the first state of the infinite well.
+
+    The Hamiltonian becomes:
+
+    \begin{equation*}
+        \hat H = -\frac{1}{\pi^2}\frac{d^2}{d\xi^2} + f(\xi - 1/2)
+    \end{equation*}
+
+    The unperturbed Schr\"odinger equation:
+
+    \begin{equation*}
+        \hat H_o \psi_n = \varepsilon_n\psi_n
+    \end{equation*}
+
+}
+
+\pagebreak
+
+\boxedanswer{    
+
+
+    And the general solution:
+
+    \begin{equation*}
+        \psi_n(\xi) = \sqrt{2}\sin(n\pi\xi)
+    \end{equation*}
+
+    We can construct the Hamiltonian as a matrix:
+
+    \begin{align*}
+        H_{ij} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2} \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\phi_j(\xi) d\xi
+    \end{align*}
+
+    By taking the basis as the first three eignfunctions, we range $i$ and $j$ 
+    from 1 to 2.
+
+    \begin{align*}
+        H_{1,1} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2} 
+            \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
+                & \begin{aligned}
+                    \psi_1(\xi) &= \psi_1^*(\xi) = \sqrt{2}\sin(\pi\xi) \\
+                    \frac{d^2}{d\xi^2} \psi_j(\xi) &= -\sqrt{2}\pi^2\sin(\pi\xi) \\
+                \end{aligned} \\
+        H_{1,1} &= -\frac{1}{\pi^2} \int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right) 
+            \left(-\sqrt{2}\pi^2\sin(\pi\xi)\right) d\xi + 
+            f\int_0^1 (\xi - 1/2)\left(\sqrt{2}\sin(\pi\xi)\right)^2 d\xi \\
+        H_{1,1} &= 2\pi^2\frac{1}{\pi^2} \int_0^1 \sin^2(\pi\xi) 
+             d\xi + 2f\int_0^1 (\xi - 1/2)\sin^2(\pi\xi)
+             d\xi \\
+                &\begin{aligned}
+                    % u &= (\xi - 1/2) \\
+                    % du &= d\xi \\
+                    % dv &= \sin^2(\pi \xi) = \frac{1}{2}\left[1 - \cos(2\pi\xi)\right]d\xi \\
+                    % v &= \sin^2(\pi \xi) = \frac{1}{2}\left[\xi - \frac{1}{2\pi}\sin(2\pi\xi)\right] \\
+                    % 2f\int_0^1 (\xi - 1/2)\sin^2(\pi\xi)^2
+                    % d\xi &= 2f\left[uv\right]_0^1 - \int_0^1 vdu\\
+                    2f\int_0^1 \overbrace{(\xi - 1/2)}^{\text{odd}}\overbrace{\sin^2(\pi\xi)^2 
+                }^{\text{even}}d\xi &= 0 \\
+                    % \cancel{\left[(\xi-1/2)\frac{1}{2}\left[1-\cos(2\pi\xi)\right]d\xi\right]_0^1}
+                    %     -\int_0^1\frac{1}{2}\left[\xi-\frac{1}{2\pi}\sin(2\pi\xi)\right]d\xi \\
+                    % 2f\int_0^1(\xi-1/2)\sin^2(\pi\xi)^2
+                    %     d\xi&=-\frac{1}{4}\left[\xi^2+\frac{1}{2\pi^2}
+                    %     \cos(2\pi\xi)\right]_0^1 \\
+                    % 2f\int_0^1(\xi-1/2)\sin^2(\pi\xi)^2
+                    %         d\xi&=-\frac{1}{4} \\
+                    2\int_0^1 \sin^2(\pi\xi) d\xi &=
+                        2\int_0^1\frac{1}{2}\left[1 - \cos(2\pi\xi) \right]d\xi \\ 
+                    2\int_0^1 \sin^2(\pi\xi) d\xi &=
+                    \left[\xi - \frac{1}{2\pi}\sin(2\pi\xi)\right]_0^1 \\ 
+                    2\int_0^1 \sin^2(\pi\xi) d\xi &= 1 \\ 
+                \end{aligned} \\
+        H_{2,2} &= -\frac{1}{\pi^2} \int_0^1 \psi_2^*(\xi) \frac{d^2}{d\xi^2} 
+            \psi_2(\xi) d\xi + f\int_0^1 \psi_2^*(\xi)(\xi - 1/2)\psi_2(\xi) d\xi \\
+                & \begin{aligned}
+                    \frac{d^2}{d\xi^2} \psi_2(\xi) &= -4\sqrt{2}\pi^2\sin(2\pi\xi) \\
+                \end{aligned} \\
+        H_{2,2} &= 8\int_0^1\sin^2(2\pi\xi) 
+             d\xi+\cancel{2f\int_0^1(\xi-1/2)\sin^2(2\pi\xi)d\xi}\\
+        H_{2,2} &= 4\int_0^1\left[1-\cos(4\pi\xi)\right] \\
+        H_{2,2} &= 4\left[\xi-\frac{1}{4\pi}\sin(4\pi\xi)\right]_0^1 \\
+        H_{2,2} &= 4 \\
+        H_{1,2} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2} 
+            \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
+                & \begin{aligned}
+                    \psi_i^*(\xi) &= \sqrt{2}\sin(\pi\xi) \\
+                    \psi_j(\xi) &= \sqrt{2}\sin(2\pi\xi) \\
+                    \frac{d^2}{d\xi^2} \psi_j(\xi) &= 
+                    -4\sqrt{2}\pi^2\sin(2\pi\xi) \\
+                \end{aligned}
+    \end{align*}
+
+}
+
+\boxedanswer{
+    \begin{align*} 
+        H_{1,2} &= -\frac{1}{\pi^2} \int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right) 
+            \left(-4\sqrt{2}\pi^2\sin(2\pi\xi)\right)d\xi+ 
+            f\int_0^1 \left(\sqrt{2}\sin(\pi\xi)\right)(\xi - 1/2)
+            \left(\sqrt{2}\sin(2\pi\xi)\right) d\xi \\
+        H_{1,2} &= 8\underbrace{\int_0^1 \overbrace{\sin(\pi\xi)}^{\text{even}}
+        \overbrace{\sin(2\pi\xi)}^{\text{odd}}d\xi}_0 - 
+        2\overbrace{f}^3\overbrace{\int_0^1 (\xi - 1/2)\sin(\pi\xi)
+            \sin(2\pi\xi)}^{\frac{8}{9\pi^2}}d\xi \\
+            H_{1,2} &= -\frac{16}{3\pi^2} \\
+        H_{2,1} &= -\frac{1}{\pi^2} \int_0^1 \psi_i^*(\xi) \frac{d^2}{d\xi^2} 
+            \psi_j(\xi) d\xi + f\int_0^1 \psi_i^*(\xi)(\xi - 1/2)\psi_j(\xi) d\xi \\
+                & \begin{aligned}
+                    \psi_i^*(\xi) &= \sqrt{2}\sin(2\pi\xi) \\
+                    \psi_j(\xi) &= \sqrt{2}\sin(\pi\xi) \\
+                    \frac{d^2}{d\xi^2} \psi_j(\xi) &= 
+                    -\sqrt{2}\pi^2\sin(2\pi\xi) \\
+                \end{aligned} \\
+        H_{2,1} &= -\frac{1}{\pi^2} \int_0^1  
+        \left(\sqrt{2}\sin(2\pi\xi)\right)\left(-\sqrt{2}\pi^2\sin(\pi\xi)\right)d\xi+ 
+            f\int_0^1 \left(\sqrt{2}\sin(2\pi\xi)\right)(\xi - 1/2)
+            \left(\sqrt{2}\sin(\pi\xi)\right) d\xi \\
+        H_{2,1} &= \underbrace{\int_0^1 \overbrace{\sin(2\pi\xi)}^{\text{odd}}
+            \overbrace{\sin(\pi\xi)}^{\text{even}}d\xi}_0 - 
+        2\overbrace{f}^3\overbrace{\int_0^1 (\xi - 1/2)\sin(\pi\xi)
+            \sin(2\pi\xi)}^{\frac{8}{9\pi^2}}d\xi \\
+            H_{2,1} &= -\frac{16}{3\pi^2} \\
+            &\boxed{\hat H = \begin{bmatrix}
+                1 & -\frac{16}{3\pi^2} \\
+                -\frac{16}{3\pi^2} & 4 \\
+            \end{bmatrix}}
+    \end{align*}
+}
+
 \pagebreak
 
 \section*{Problem 6.3.2}
