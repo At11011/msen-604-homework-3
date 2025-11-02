@@ -9,7 +9,7 @@
 
 \pagebreak
 
-\section*{Problem 6.2.1}
+\section*{Problem 6.2.1}% {{{
 
 Solve the problem above of an electron in a potential well with 3
 units of field using the first two energy eigenfunctions of the well
@@ -245,7 +245,7 @@ and eigenfunctions.
   \end{align*}
 }
 
-\pagebreak
+\pagebreak% }}}
 
 \section*{Problem 6.3.2}
 
@@ -255,7 +255,7 @@ potential energy
 inside the potential well is parabolic, of the form
 
 \begin{equation}
-  V(z)=u(z-L_z/2)^22
+  V(z)=u(z-L_z/2)^2
 \end{equation}
 
 where $u$ is a real constant. This potential is presumed to be small
@@ -282,6 +282,179 @@ in terms of $u$, $L_z$, and fundamental constants.
   \begin{equation*}
     \hat H_p = u(z - L_z/2)^2 \\
   \end{equation*}
+
+  The Schr\"odinger equation now becomes:
+
+  \begin{equation*}
+    (\hat H_o + \gamma \hat H_p) | \phi \rangle = E | \phi \rangle \\
+  \end{equation*}
+
+  We expand $|\phi\rangle$ in a power series of $\gamma$:
+
+  \begin{align*}
+    |\phi\rangle &= |\phi^{(0)}\rangle + \gamma |\phi^{(1)}\rangle +
+    \gamma^2|\phi^{(2)}\rangle + \gamma^3|\phi^{(3)}\rangle+\cdots \\
+    E &= E^{(0)} + \gamma E^{(1)} + \gamma^2E^{(2)} +\gamma^3E^{(3)} + \cdots
+  \end{align*}
+
+  Substituting:
+
+  \begin{multline*}
+    (\hat H_o + \gamma \hat H_p)\left(|\phi^{(0)}\rangle + \gamma
+      |\phi^{(1)}\rangle +
+    \gamma^2|\phi^{(2)}\rangle + \gamma^3|\phi^{(3)}\rangle+\cdots\right)  = \\
+    \left(E^{(0)} + \gamma E^{(1)} + \gamma^2E^{(2)} +\gamma^3E^{(3)} + \cdots
+    \right)\left(|\phi^{(0)}\rangle + \gamma |\phi^{(1)}\rangle +
+    \gamma^2|\phi^{(2)}\rangle + \gamma^3|\phi^{(3)}\rangle+\cdots  \right) \\
+  \end{multline*}
+
+  Comparing terms that are in 0\textsuperscript{th} order in $\gamma$:
+
+  \begin{align*}
+    \hat H_0 | \phi^{(0)} \rangle &= E^{(0)} | \phi^{(0)} \rangle
+  \end{align*}
+
+  The is the unperturbed Hamiltonian, so $\phi^{(0)} = |\psi_m\rangle$.
+
+  \begin{align*}
+    \hat H_0 | \psi_m \rangle &= E_m | \psi_m \rangle
+  \end{align*}
+
+  Then the terms in 1\textsuperscript{st} and 2\textsuperscript{nd}
+  order in $\gamma$:
+
+  \begin{align*}
+    \hat H_o | \phi^{(1)} \rangle + \hat H_p|\psi_m\rangle &=
+    E_m | \phi^{(1)} \rangle + E^{(1)} \psi_m \rangle \\
+    \hat H_o | \phi^{(2)}\rangle + \hat H_p|\phi^{(1)}\rangle &=
+    E_m| \phi^{(2)} \rangle + E^{(1)} | \phi^{(1)}\rangle +
+    E^{(2)}|\psi_m\rangle \\
+  \end{align*}
+
+}
+
+\boxedanswer{
+
+  Rearranging:
+
+  \begin{align*}
+    (\hat H_o - E_m) |\psi_m \rangle &= 0 \\
+    (\hat H_o - E_m) | \phi^{(1)} \rangle &=
+    (E^{(1)} - \hat H_p) |\phi^{(1)} \rangle \\
+    (\hat H_o - E_m) |\phi^{(2)}\rangle &= (E^{(1)} - \hat H_p ) |
+    \phi^{(1)} \rangle + E^{(2)} |\psi_m\rangle
+  \end{align*}
+
+  We then solve for the first-order correction eigenenergy:
+
+  \begin{align*}
+    \langle \psi_m |(\hat H_o - E_m) | \phi^{(1)} \rangle &=
+    \langle \psi_m |(E^{(1)} - \hat H_p) |\phi^{(1)} \rangle \\
+    \langle \psi_m | \hat H_o - E_m | \phi^{(1)} \rangle &=
+    (\langle \psi_m | \hat H_o - E_m ) | \phi^{(1)} \rangle =
+    \langle \psi_m | (E_m - E_m ) | \phi^{(1)} \rangle = 0 \\
+    &= \langle \psi_m | E^{(1)} - \hat H_p | \psi_m\rangle
+    = E^{(1)} - \langle \psi_m | \hat H_p | \psi_m\rangle \\
+    E^{(1)} &= \langle \psi_m | \hat H_p | \psi_m\rangle
+  \end{align*}
+
+  Solve for the first-order correction by substituting into the first-order
+  equation and multiply by a particular $\psi_i$:
+
+  \begin{align*}
+    | \phi^{(1)} \rangle &= \sum_n a_n^{(1)} | \psi_n \rangle \\
+    \langle \psi_i | \hat H_o - E_m | \phi^{(1)} \rangle &= (E_i - E_m)
+    \langle \psi_i | \phi^{(1)} \rangle = (E_i - E_m) a_i^{(1)} \\
+    &= \langle \psi_i | E^{(1)} - \hat H_p | \psi_m \rangle = E^{(1)}
+    \langle \psi_i | \psi_m \rangle - \langle \psi_i | \hat H_p |
+    \psi_m \rangle \\
+  \end{align*}
+
+  Assuming non-degeneracy and $i \ne m$:
+
+  \begin{align*}
+    a_i^{(1)} &=  \frac{\langle \psi_i | \hat H_p |
+    \psi_m \rangle}{E_m - E_i}
+  \end{align*}
+
+  For $i = m$:
+
+  \begin{align*}
+    (E_m - E_m)a_m^{(1)} &= 0 a_m^{(1)} \\
+    &= E^{(1)} - \langle \psi_m | \hat H_p | \psi_m \rangle
+    = E^{(1)} - E^{(1)} = 0
+  \end{align*}
+
+  For convenience, we can choose $a_m^{(1)} = 0$. Therefore:
+
+  \begin{equation*}
+    \langle \psi_m | \phi^{(j)} \rangle = 0
+  \end{equation*}
+
+  Hence:
+
+  \begin{equation*}
+    | \phi^{(1)} \rangle = \sum_{n \ne m} \frac{\langle \psi_n | \hat
+    H_p | \psi_m \rangle}{E_m - E_n} | \psi_n \rangle
+  \end{equation*}
+
+  For this problem , we chose the basis functions to be the first two
+  eigenfunctions for the infinite well.
+
+  \begin{align*}
+    \psi_m &= \sqrt{2}\sin\left(\frac{m\pi z}{L_z}\right) \\
+    \Delta E_{1\rightarrow 2} &= E_2 - E_1 \\
+    &
+    \begin{aligned}
+      E^{(1)} &= \langle \psi_m | \hat H_p | \psi_m \rangle \\
+      E^{(1)} &= \int_0^{L_z} \sqrt{2} \sin\left(\frac{m\pi z}{L_z}\right)
+      u(z - L_z/2)^2\sqrt{2}\sin\left(\frac{m\pi z}{L_z}\right)dz
+    \end{aligned}
+  \end{align*}
+
+}
+
+\boxedanswer{
+  \begin{align*}
+    E^{(1)} &= 2\int_0^{L_z}\sin\left(\frac{m\pi z}{L_z}\right)
+    u(z - L_z/2)^2\sin\left(\frac{m\pi z}{L_z}\right)dz \\
+    E^{(1)} &= 2u\int_0^{L_z}\sin^2\left(\frac{m\pi z}{L_z}\right)
+    (z - L_z/2)^2dz \\
+    E^{(1)} &= 2u\int_0^{L_z}\sin^2\left(\frac{m\pi z}{L_z}\right)
+    (z^2 - zL_z + (L_z/2)^2)dz \\
+    E^{(1)}_1 &= 2u\int_0^{L_z}z^2\sin^2\left(\frac{\pi z}{L_z}\right) dz
+    - 2uL_z\int_0^{L_z}z\sin^2\left(\frac{\pi z}{L_z}\right) dz
+    + \frac{2uL_z^2}{4}\int_0^{L_z}\sin^2\left(\frac{\pi z}{L_z}\right) dz \\
+    &
+    \begin{aligned}
+      2u\int_0^{L_z}z^2\sin^2\left(\frac{\pi z}{L_z}\right) dz &=
+      \frac{\left(2\pi^{2} - 3\right) L_{z}^{3} u}{6\pi^{2}} \\
+      2uL_z\int_0^{L_z}z\sin^2\left(\frac{\pi z}{L_z}\right) dz &=
+      \frac{L_{z}^{3} u}{2} \\
+      \frac{2uL_z^2}{4}\int_0^{L_z}\sin^2\left(\frac{\pi z}{L_z}\right) dz &=
+      \frac{L_{z}^{3} u}{4}
+    \end{aligned} \\
+    E^{(1)}_1 &= \frac{\left(2\pi^{2} - 3\right) L_{z}^{3} u}{6\pi^{2}}
+    - \frac{L_{z}^{3} u}{2}
+    + \frac{L_{z}^{3} u}{4} \\
+    E^{(1)}_1 &= \frac{\left(\pi^{2} - 6\right) L_{z}^{3} u}{12\pi^{2}} \\
+    E^{(1)}_2 &= 2u\int_0^{L_z}\sin^2\left(\frac{2\pi z}{L_z}\right)
+    (z - L_z/2)^2dz \\
+    E^{(1)}_2 &= 2u\int_0^{L_z}z^2\sin^2\left(\frac{2\pi z}{L_z}\right) dz
+    - 2uL_z\int_0^{L_z}z\sin^2\left(\frac{2\pi z}{L_z}\right) dz
+    + \frac{2uL_z^2}{4}\int_0^{L_z}\sin^2\left(\frac{2\pi z}{L_z}\right) dz \\
+    &
+    \begin{aligned}
+      2u\int_0^{L_z}z^2\sin^2\left(\frac{2\pi z}{L_z}\right) dz &=
+      \frac{\left(8\pi^{2} - 3\right) L_{z}^{3} u}{24\pi^{2}}\\
+      2uL_z\int_0^{L_z}z\sin^2\left(\frac{2\pi z}{L_z}\right) dz &=
+      \frac{L_{z}^{3} u}{2} \\
+      \frac{2uL_z^2}{4}\int_0^{L_z}\sin^2\left(\frac{2\pi z}{L_z}\right) dz &=
+      \frac{L_{z}^{3} u}{4}\\
+    \end{aligned} \\
+    E^{(1)}_2 &=\frac{\left(2\pi^{2} - 3\right) L_{z}^{3} u}{24\pi^{2}} \\
+    \Aboxed{\Delta E^{(1)}_{1 \rightarrow 2} &= \frac{3L_{z}^{3} u}{8\pi^{2}}}
+  \end{align*}
 }
 
 \pagebreak
